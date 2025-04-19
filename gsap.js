@@ -139,82 +139,11 @@ ScrollTrigger.addEventListener("refresh", () => {
 });
 
 
-// Create a reusable text reveal animation function for repeated sections
-function createTextRevealAnimation(selector, options = {}) {
-    const defaults = {
-        duration: 3.5,
-        delay: 0,
-        ease: "power2.inOut",
-        cursorColor: "rgba(255,255,255,0.75)"
-    };
-    
-    const settings = { ...defaults, ...options };
-    
-    const tl = gsap.timeline({ paused: true });
-    
-    // Create unique ScrollTrigger for each instance
-    const st = ScrollTrigger.create({
-        trigger: selector,
-        start: "bottom top", // Start when bottom of element hits top of viewport
-        end: "top 20%", // End when top of element hits 20% from top of viewport
-        onEnter: () => {
-            // Text reveal animation
-            tl.fromTo(selector, {
-                clipPath: "inset(0 100% 0 0)", // Start fully clipped from right
-                opacity: 0
-            }, {
-                clipPath: "inset(0 0% 0 0)", // Reveal to full width
-                opacity: 1,
-                duration: settings.duration,
-                delay: settings.delay,
-                ease: settings.ease
-            }, 0);
-            
-            // Text cursor animation
-            tl.fromTo(selector, 0.5, {
-                "border-right-color": settings.cursorColor
-            }, {
-                "border-right-color": "rgba(255,255,255,0)",
-                repeat: -1,
-                ease: "none"
-            }, 0);
-            
-            tl.play();
-        },
-        // Add markers for debugging
-        markers: true,
-        // Add toggle actions for better control
-        toggleActions: "play pause reverse pause"
-    });
-    
-    // Store ScrollTrigger instance for cleanup
-    tl.scrollTrigger = st;
-    
-    return tl;
-}
 
-// Initialize text reveal animations for different sections with custom options
-const typewriterAnim = createTextRevealAnimation(".anim-typewriter", {
-    duration: 1.2,
-    delay: 0.2
-});
 
-const lineAnim = createTextRevealAnimation(".line-1", {
-    duration: 1.5,
-    cursorColor: "rgba(255,255,255,0.9)"
-});
 
-// Add cleanup function
-    function cleanupAnimations() {
-        [typewriterAnim, lineAnim].forEach(anim => {
-            if (anim.scrollTrigger) {
-                anim.scrollTrigger.kill();
-            }
-        });
-    }
-//slider
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const $container = $(".gallery");
 const $items = $(".cards");
@@ -249,6 +178,262 @@ gsap
   })
   .add(sliderTl);
 
+
+
+// scroll smoothere
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to create typewriter animation for any element
+// Animation 1
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-1",
+        start: "top 100%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-1", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-1", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.9)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
+
+// Animation 2
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-2",
+        start: "top 80%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-2", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-2", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.8)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
+
+// Animation 3
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-3",
+        start: "top 80%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-3", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-3", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.7)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
+
+// Animation 4
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-4",
+        start: "top 80%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-4", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-4", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.6)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
+
+// Animation 5
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-5",
+        start: "top 80%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-5", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-5", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.5)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
+
+// Animation 6
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-6",
+        start: "top 80%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-6", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-6", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.4)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
+
+// Animation 7
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-7",
+        start: "top 80%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-7", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-7", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.3)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
+
+// Animation 8
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".heading-8",
+        start: "top 80%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reverse"
+    }
+})
+.fromTo(".heading-8", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0
+}, {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.inOut"
+})
+.fromTo(".heading-8", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.2)"
+}, {
+    "border-right-color": "rgba(255,255,255,0)",
+    repeat: -1,
+    ease: "none"
+}, 0);
 
 });
 

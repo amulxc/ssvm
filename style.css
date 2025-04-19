@@ -163,6 +163,7 @@ span.text-stroke{
    text-align: center;
  min-height: 100vh;
  background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 
 

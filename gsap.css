@@ -131,4 +131,18 @@ body {
 
 
 /* pin slides */
-  
+
+.gallery {
+	position: relative;
+  height: 100vh;
+	overflow: hidden;
+}
+
+.cards {
+	position: absolute;
+    top: 45%;
+    left: 50%;
+    height: 18rem;
+    display: flex;
+    padding: 0;
+}

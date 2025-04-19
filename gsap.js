@@ -85,7 +85,7 @@ gsap.set(".panel.gradient-blue", {
 });
 
 // Create a timeline with ScrollTrigger
-const tl = gsap.timeline({
+const panelTl = gsap.timeline({
     scrollTrigger: {
         trigger: ".wrapper",
         start: "top top", // Trigger when the top of the wrapper hits the top of the viewport
@@ -102,7 +102,7 @@ const tl = gsap.timeline({
 });
 
 // Add animation sequences to timeline
-tl.to(".box", {
+panelTl.to(".box", {
     autoAlpha: 1, // Fade in the box
     duration: 1,
     ease: "power1.inOut"
@@ -205,72 +205,51 @@ const lineAnim = createTextRevealAnimation(".line-1", {
 });
 
 // Add cleanup function
-function cleanupAnimations() {
-    [typewriterAnim, lineAnim].forEach(anim => {
-        if (anim.scrollTrigger) {
-            anim.scrollTrigger.kill();
-        }
-    });
-}
+    function cleanupAnimations() {
+        [typewriterAnim, lineAnim].forEach(anim => {
+            if (anim.scrollTrigger) {
+                anim.scrollTrigger.kill();
+            }
+        });
+    }
+//slider
 
-// Optional: Call cleanup when needed
-// cleanupAnimations();
+gsap.registerPlugin(ScrollTrigger);
 
-// Example of how to use in repeated sections:
-// createTextRevealAnimation(".section-1-text", { duration: 1.3 });
-// createTextRevealAnimation(".section-2-text", { duration: 1.4 });
-// createTextRevealAnimation(".section-3-text", { duration: 1.5 });
-// Add more sections as needed with custom widths
-// createTypewriterAnimation(".custom-section", "15em");
+const $container = $(".gallery");
+const $items = $(".cards");
+
+const getMaxWidthHeight = function () {
+  maxWidth = $items.width();
+  maxHeight = $items.height();
+};
+getMaxWidthHeight();
+
+ScrollTrigger.addEventListener("refreshInit", getMaxWidthHeight);
+
+const sliderTl = gsap.timeline().to($items, {   
+  x: function () {
+    return -maxWidth;
+  },
+  ease: "none"
+});
+
+gsap
+  .timeline({
+    ease: "linear",
+    scrollTrigger: {
+      trigger: $container,
+      pin: true,
+      end: function () {
+        return "+=" + maxWidth;
+      },
+      scrub: 1,
+      invalidateOnRefresh: true
+    }
+  })
+  .add(sliderTl);
 
 
-
-// Optional: Add pause/resume functionality
-// tl.pause(); // To pause animation
-// tl.resume(); // To resume animation
-    //  gsap.to('.fade-in-section', {
-    //     opacity: 1,
-    //     y: 0,
-    //     scale: 1.2, // Add a slight zoom effect
-    //     duration: 0.3, // Uncommented duration for smoother effect
-    //     ease: 'power2.out',
-    //     scrollTrigger: {
-    //         trigger: '.fade-in-section',
-    //         start: 'top 65%',
-    //         end: 'bottom 65%',
-    //         scrub: 1,
-    //         markers: true,
-    //         toggleActions: 'play none none reverse'
-    //     },
-    // });
-
-    // gsap.to('.scroll-text.left-to-right', {
-    //     x: '0%',
-    //     ease: 'power2.out',
-    //     duration: 1,
-    //     scrollTrigger: {
-    //         trigger: '.scrolling-text-container',
-    //         start: 'top 65%',
-    //         end: 'bottom 65%',
-    //         scrub: 1,
-    //         markers: true,
-    //         toggleActions: 'play none none reverse'
-    //     }
-    // });
-
-    // gsap.to('.scroll-text.right-to-left', {
-    //     x: '0%',
-    //     ease: 'power2.out',
-    //     duration: 1,
-    //     scrollTrigger: {
-    //         trigger: '.scrolling-text-container',
-    //         start: 'top 65%',
-    //         end: 'bottom 65%',
-    //         scrub: 1,
-    //         markers: true,
-    //         toggleActions: 'play none none reverse'
-    //     }
-    // });
 });
 
 

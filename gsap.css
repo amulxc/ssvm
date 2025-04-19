@@ -114,7 +114,7 @@ body {
     top: 50%;  
     width: fit-content;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
   
     -webkit-box-sizing:content-box;
@@ -123,9 +123,10 @@ body {
 
 /* Animation */
 .anim-typewriter{
-  width:0;
-  /*animation: typewriter 4s steps(44) 1s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;*/
+  /* width:0; */
+  opacity: 0;
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
 }
 
 

@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     duration: 1,
     scrollTrigger: {
       trigger: ".scroll-text.opacity0-1", // Trigger element
-      start: "top 20%", // Start when the element is 80% from the top of the viewport
+      start: "top -50%", // Start when the element is 80% from the top of the viewport
       end: "top -20%",   // End when the element is near the top of the viewport
       scrub: 1.2,      // Link animation to scroll position
       markers: true,    // Show markers for debugging (optional)
@@ -139,42 +139,87 @@ ScrollTrigger.addEventListener("refresh", () => {
 });
 
 
-
-
-
-// Create a reusable typewriter animation function
-function createTypewriterAnimation(selector, width = "20.18em") {
-    const tl = new TimelineMax({ paused: true });
+// Create a reusable text reveal animation function for repeated sections
+function createTextRevealAnimation(selector, options = {}) {
+    const defaults = {
+        duration: 3.5,
+        delay: 0,
+        ease: "power2.inOut",
+        cursorColor: "rgba(255,255,255,0.75)"
+    };
     
-    ScrollTrigger.create({
+    const settings = { ...defaults, ...options };
+    
+    const tl = gsap.timeline({ paused: true });
+    
+    // Create unique ScrollTrigger for each instance
+    const st = ScrollTrigger.create({
         trigger: selector,
-        start: "top 80%",
+        start: "bottom top", // Start when bottom of element hits top of viewport
+        end: "top 20%", // End when top of element hits 20% from top of viewport
         onEnter: () => {
-            // Letter animation
-            tl.fromTo(selector, 8, {
-                width: "0",
+            // Text reveal animation
+            tl.fromTo(selector, {
+                clipPath: "inset(0 100% 0 0)", // Start fully clipped from right
+                opacity: 0
             }, {
-                width: width,
-                ease: SteppedEase.config(37)
+                clipPath: "inset(0 0% 0 0)", // Reveal to full width
+                opacity: 1,
+                duration: settings.duration,
+                delay: settings.delay,
+                ease: settings.ease
             }, 0);
             
             // Text cursor animation
             tl.fromTo(selector, 0.5, {
-                "border-right-color": "rgba(255,255,255,0.75)"
+                "border-right-color": settings.cursorColor
             }, {
                 "border-right-color": "rgba(255,255,255,0)",
                 repeat: -1,
-                ease: SteppedEase.config(37)
+                ease: "none"
             }, 0);
             
             tl.play();
+        },
+        // Add markers for debugging
+        markers: true,
+        // Add toggle actions for better control
+        toggleActions: "play pause reverse pause"
+    });
+    
+    // Store ScrollTrigger instance for cleanup
+    tl.scrollTrigger = st;
+    
+    return tl;
+}
+
+// Initialize text reveal animations for different sections with custom options
+const typewriterAnim = createTextRevealAnimation(".anim-typewriter", {
+    duration: 1.2,
+    delay: 0.2
+});
+
+const lineAnim = createTextRevealAnimation(".line-1", {
+    duration: 1.5,
+    cursorColor: "rgba(255,255,255,0.9)"
+});
+
+// Add cleanup function
+function cleanupAnimations() {
+    [typewriterAnim, lineAnim].forEach(anim => {
+        if (anim.scrollTrigger) {
+            anim.scrollTrigger.kill();
         }
     });
 }
 
-// Initialize typewriter animations for different sections
-createTypewriterAnimation(".anim-typewriter");
-createTypewriterAnimation(".line-1");
+// Optional: Call cleanup when needed
+// cleanupAnimations();
+
+// Example of how to use in repeated sections:
+// createTextRevealAnimation(".section-1-text", { duration: 1.3 });
+// createTextRevealAnimation(".section-2-text", { duration: 1.4 });
+// createTextRevealAnimation(".section-3-text", { duration: 1.5 });
 // Add more sections as needed with custom widths
 // createTypewriterAnimation(".custom-section", "15em");
 

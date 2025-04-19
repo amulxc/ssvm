@@ -134,7 +134,7 @@ body {
 
 .gallery {
 	position: relative;
-  height: 100vh;
+    height: 100vh;
 	overflow: hidden;
 }
 
@@ -145,4 +145,18 @@ body {
     height: 18rem;
     display: flex;
     padding: 0;
+}
+.cards iframe {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 14rem;
+    height: 18rem;
+}
+@media (max-width: 768px) {
+    .gallery {
+        height: 60vh;}
+        .cards {
+            position: absolute;
+            top: 35%;}
 }

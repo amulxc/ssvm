@@ -169,6 +169,7 @@ gsap
     scrollTrigger: {
       trigger: $container,
       pin: true,
+      
       end: function () {
         return "+=" + maxWidth;
       },

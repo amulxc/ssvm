@@ -105,6 +105,12 @@ span.text-stroke{
     -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 
+span.text-stroke-black{
+  color: rgb(0, 0, 0);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0); /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+}
 
 
 

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             end: 'bottom -230%',
             repeat: -1,
             scrub: 1.2,
-            markers: true
+            markers: false
         }
     });
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
       start: "top -50%", // Start when the element is 80% from the top of the viewport
       end: "top -20%",   // End when the element is near the top of the viewport
       scrub: 1.2,      // Link animation to scroll position
-      markers: true,    // Show markers for debugging (optional)
+      markers: false,    // Show markers for debugging (optional)
       pin: true,        // Pin the element in place while scrolling
       pinSpacing: false, // Optional: removes extra spacing when the element is pinned
    
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
       start: "top 80%", // Start when the element is 80% from the top of the viewport
       end: "top 20%",   // End when the element is near the top 50% of the viewport
       scrub: true,      // Link animation to scroll position
-      markers: true,    // Show markers for debugging (optional)
+      markers: false,    // Show markers for debugging (optional)
       pin: true,        // Pin the element during scrolling
       pinSpacing: false // Optional: removes extra spacing when the element is pinned
     }
@@ -92,7 +92,7 @@ const panelTl = gsap.timeline({
         end: "+=100%", // Make the animation last over 200% of the wrapper's height
         scrub: 1, // Smooth scrubbing effect
         pin: true, // Pin the element during the scroll
-        markers: true, // Show markers for debugging
+        markers: false, // Show markers for debugging
         toggleActions: "play pause reverse pause", // Control animation play state
         onEnter: () => console.log("Animation started"),
         onLeave: () => console.log("Animation ended"),
@@ -123,7 +123,7 @@ panelTl.to(".box", {
         start: "top top", // Start when the top of the wrapper hits the top of the viewport
         end: "bottom bottom", // End when the bottom of the wrapper hits the bottom of the viewport
         scrub: 1, // Smooth scrubbing effect
-        markers: true, // Show markers for debugging
+        markers: false, // Show markers for debugging
         onUpdate: (self) => {
             // Calculate opacity based on the scroll progress
             const opacity = gsap.utils.mapRange(0, 0.7, 0, 1, self.progress); // Map scroll progress to opacity from 0 to 1 (70% scroll)
@@ -218,7 +218,7 @@ gsap.timeline({
         trigger: ".heading-1",
         start: "top 100%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })
@@ -246,7 +246,7 @@ gsap.timeline({
         trigger: ".heading-2",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })
@@ -274,7 +274,7 @@ gsap.timeline({
         trigger: ".heading-3",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })
@@ -302,7 +302,7 @@ gsap.timeline({
         trigger: ".heading-4",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })
@@ -330,7 +330,7 @@ gsap.timeline({
         trigger: ".heading-5",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })
@@ -358,7 +358,7 @@ gsap.timeline({
         trigger: ".heading-6",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })
@@ -386,7 +386,7 @@ gsap.timeline({
         trigger: ".heading-7",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })
@@ -414,7 +414,7 @@ gsap.timeline({
         trigger: ".heading-8",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse"
     }
 })

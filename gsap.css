@@ -147,20 +147,26 @@ body {
     padding: 0;
 }
 .cards iframe {
-	padding: 0;
-	margin: 0;
-	width: 34rem;
+    padding: 0;
+    margin: 0;
+    width: 34rem;
     height: 18rem;
+    position: relative; /* Add this to ensure z-index works */
+    z-index: 10; /* Ensure iframe is on top */
+    pointer-events: auto; /* Enable interaction with iframe */
 }
+
 @media (max-width: 768px) {
     .gallery {
-        height: 60vh;}
-        .cards {
-            position: absolute;
-            margin-top: 50px;
-            bottom: 5%;}
-            .cards iframe {
-                width: 24rem;
-                height: 18rem;
-            }     
+        height: 60vh;
+    }
+    .cards {
+        position: absolute;
+        margin-top: 50px;
+        bottom: 5%;
+    }
+    .cards iframe {
+        width: 24rem;
+        height: 18rem;
+    }
 }

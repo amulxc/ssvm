@@ -144,7 +144,6 @@ ScrollTrigger.addEventListener("refresh", () => {
 
 
 // gsap.registerPlugin(ScrollTrigger);
-
 const $container = $(".gallery");
 const $items = $(".cards");
 
@@ -163,18 +162,26 @@ const sliderTl = gsap.timeline().to($items, {
   ease: "none"
 });
 
+// Ensure interaction with iframe during scroll animation
 gsap
   .timeline({
     ease: "linear",
     scrollTrigger: {
       trigger: $container,
       pin: true,
-      
       end: function () {
         return "+=" + maxWidth;
       },
       scrub: 1,
-      invalidateOnRefresh: true
+      invalidateOnRefresh: true,
+      onEnter: () => {
+        // Enable pointer events when entering the scroll area
+        $items.css('pointer-events', 'auto');
+      },
+      onLeave: () => {
+        // Disable pointer events when leaving the scroll area to prevent interaction with hidden content
+        $items.css('pointer-events', 'none');
+      }
     }
   })
   .add(sliderTl);

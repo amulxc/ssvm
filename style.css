@@ -55,7 +55,7 @@ h2{
     font-size: 65px;
 }
 h3{
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 700;
     @media (max-width:767px) {
         font-size: 24px;
@@ -277,7 +277,9 @@ span.text-stroke{
     position: relative; /* Ensure they can move */
     transition: transform 0.3s ease; /* Optional for smoothness */
 }
-
+nav{
+  z-index: 1000 !important;
+}
 .card{
     height: 300px;
     width: 300px;

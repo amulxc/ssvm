@@ -8,6 +8,9 @@
 #smooth-wrapper {
   font-family: 'Unbounded', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .pin-spacer {
   pointer-events: none;

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="gsap.css">
 </head>
 
-<header class="sticky top-0 ">
+<header class="">
     <div class="  absolute top-0 w-full px-5">
         
             <nav class="px-4 py-4 flex justify-between items-center">
@@ -56,12 +56,12 @@
             </nav>
             <div class="navbar-menu relative hidden">
                 <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-                <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto ">
+                <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
                     <div class="flex items-center mb-8">
                         <a class="mr-auto text-3xl font-bold leading-none" href="#">
                             <img src="images/logo.webp" alt="" class="h-12">
                         </a>
-                        <button class="navbar-close">
+                        <button class="navbar-close" onclick="document.querySelector('.navbar-menu').classList.add('hidden')">
                             <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -69,21 +69,11 @@
                     </div>
                     <div>
                         <ul>
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#home">Home</a></li>
-                   
-                            <!-- <li><a class="text-sm hover:text-gray-400 text-black" href="#">About Conclave</a></li> -->
-                          
-                            <!-- <li><a class="text-sm hover:text-gray-400 text-black" href="#">Speakers</a></li> -->
-                           
-                            <!-- <li><a class="text-sm hover:text-gray-400 text-black" href="#">Entertainment</a></li> -->
-                            <!-- <li><a class="text-sm hover:text-gray-400 text-black" href="#">Workshops</a></li> -->
-                            <!-- <li><a class="text-sm hover:text-gray-400 text-black" href="#awards">Awards</a></li> -->
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#inspirational-guru-award">Inspirational Guru Award</a></li>
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#studentpreneur-award">Studentpreneur Award</a></li>
-                            <!-- <li><a class="text-sm hover:text-gray-400 text-black" href="#">About SSVM</a></li> -->
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#previous-editions">Previous Editions    </a></li>
-                           
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#contact">Contact</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black" href="#home" onclick="document.querySelector('.navbar-menu').classList.add('hidden')">Home</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black" href="#inspirational-guru-award" onclick="document.querySelector('.navbar-menu').classList.add('hidden')">Inspirational Guru Award</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black" href="#studentpreneur-award" onclick="document.querySelector('.navbar-menu').classList.add('hidden')">Studentpreneur Award</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black" href="#previous-editions" onclick="document.querySelector('.navbar-menu').classList.add('hidden')">Previous Editions</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black" href="#contact" onclick="document.querySelector('.navbar-menu').classList.add('hidden')">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -152,74 +142,7 @@
 
 
 
-<!-- past highlights ssvm -->
-<section id="previous-editions" class="bg2">
-    <div class="container mx-auto py-[5rem] px-4">
-        
-            
-            <div class="gallery pt-40  md:pt-20">
-                <div class="flex py-4 mb-5 items-center"> 
-                    <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start line-1 anim-typewriter heading-1">P<span class="text-stroke">a</span>st Ed<span class="text-stroke">i</span>tion Highlights</h2>
-                    </div>
-            <div class="cards py-4 gap-20 flex md:flex-row  items-center">
-                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/6qpZGsod9dk?si=iou7BU5uIPV1CbGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/d43oTWwyK_g?si=-GphQs6_O_TidXgN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/lA-mD4EEG9Y?si=ztFP5MFBVdN07CQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/lA-mD4EEG9Y?si=ztFP5MFBVdN07CQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/lA-mD4EEG9Y?si=ztFP5MFBVdN07CQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-       
-    </div>
  
-<!-- 
-    <div class="container mx-auto py-[5rem] px-4">
-        <div class="flex py-4 items-center gap-4">
-            
-        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start  line-1 anim-typewriter heading-2"><span class="text-stroke">AI</span> & Hum<span class="text-stroke">a</span>n<span class="text-stroke">i</span></span>ty – Co Cre<span class="text-stroke">a</span>t<span class="text-stroke">i</span></span>ng <br/> Our World Today</h2>
-    </div>
-        <div class="flex md:flex-row flex-col justify-start pt-5 gap-8">
-            
-            <div class="md:w-7/12 w-full text-start flex flex-col gap-3">
-                <h3>SSVM INSTITUTIONS PRESENTS THE FOURTH EDITION OF</h3>
-                <p>SSVM Group of Institutions presents the Transforming India Conclave 2025, uniting thought leaders and innovators to explore how AI and human ingenuity can drive sustainable progress. With the theme "AI & Humanity – Co-Creating Our World Today", the Conclave features impactful discussions and the Studentpreneur and Inspirational Guru Awards, honoring those shaping a better, ethical, and sustainable future.</p>
-                <h3 class="pt-5">THEME FOR 2025</h3>
-                <p>At the SSVM Transforming India Conclave 2025, we focus on how AI and human creativity can shape a sustainable and innovative future. Our theme, "AI & Humanity – Co-Creating Our World Today," explores how technology and human potential can work together to solve challenges and create a better tomorrow. Join us as we dive into exciting conversations and ideas on how we can make a real impact with AI!</p>
-            </div>
-            <div class="md:w-5/12 w-full text-end flex flex-col gap-3">
-                <img src="images/placeholder.jpg" alt="" class="object-cover h-[100%] w-[100%] min-h-[250px]">
-            </div>
-        </div> -->
-
-    <!-- <div class="container mx-auto pt-[10rem] py-[5rem] px-4">
-        <div class="flex py-4 items-center">
-        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start line-1 anim-typewriter heading-3">MISSION</h2>
-        </div>
-        <p class="md:!text-4xl !text-2xl text-center pt-5 ">The SSVM Transforming India Conclave 2025 aims to ignite curiosity and inspire India's next generation of leaders. We're here to empower students with the knowledge, skills, and confidence to drive change. We believe in the power of innovative thinking and encourage fresh ideas to tackle everyday challenges. This Conclave is a collaborative platform where students, educators, and leaders unite to shape a brighter, more sustainable future for all.</p>
-    </div>
-       
-    </div>
-
-    <div class="container mx-auto py-[5rem] px-4">
-        <div class="flex py-4 items-center">
-        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start heading-4">speakers</h2>
-        </div>
-         <div class="overflow-hidden">
-            <div class="scroll-main">
-            <div class="single-section bg-red "> 
-                <div class="flex md:flex-row flex-col py-4 gap-8 items-center">
-                    <img src="images/speaker1.png" alt="" class="md:w-[450px] h-[450px] w-full">
-                    <img src="images/speaker1.png" alt="" class="md:w-[350px] h-[350px] w-full">
-                    <img src="images/speaker1.png" alt="" class="md:w-[250px] h-[250px] w-full">
-                    </div>
-            </div>
-         </div>
-        </div>
-    </div>
-        
-    </div>
- </section> -->
  <!-- awards ssvm -->
  <section id="awards" class="bg2">
     <div class="container  mx-auto py-[5rem] px-5">
@@ -311,6 +234,77 @@
             
         </div>
     </div>
+ </section>
+
+
+
+<!-- past highlights ssvm -->
+<section id="previous-editions" class="bg2">
+    <div class="container mx-auto py-[2rem] px-4">
+        
+            
+            <div class="gallery pt-40  md:pt-20">
+                <div class="flex py-4 mb-5 items-center"> 
+                    <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start line-1 anim-typewriter heading-1">P<span class="text-stroke">a</span>st Ed<span class="text-stroke">i</span>tion Highlights</h2>
+                    </div>
+            <div class="cards py-4 gap-20 flex md:flex-row  items-center">
+                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/6qpZGsod9dk?si=iou7BU5uIPV1CbGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/d43oTWwyK_g?si=-GphQs6_O_TidXgN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/lA-mD4EEG9Y?si=ztFP5MFBVdN07CQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/lA-mD4EEG9Y?si=ztFP5MFBVdN07CQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" class="w-full"  src="https://www.youtube.com/embed/lA-mD4EEG9Y?si=ztFP5MFBVdN07CQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+       
+    </div>
+ 
+<!-- 
+    <div class="container mx-auto py-[5rem] px-4">
+        <div class="flex py-4 items-center gap-4">
+            
+        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start  line-1 anim-typewriter heading-2"><span class="text-stroke">AI</span> & Hum<span class="text-stroke">a</span>n<span class="text-stroke">i</span></span>ty – Co Cre<span class="text-stroke">a</span>t<span class="text-stroke">i</span></span>ng <br/> Our World Today</h2>
+    </div>
+        <div class="flex md:flex-row flex-col justify-start pt-5 gap-8">
+            
+            <div class="md:w-7/12 w-full text-start flex flex-col gap-3">
+                <h3>SSVM INSTITUTIONS PRESENTS THE FOURTH EDITION OF</h3>
+                <p>SSVM Group of Institutions presents the Transforming India Conclave 2025, uniting thought leaders and innovators to explore how AI and human ingenuity can drive sustainable progress. With the theme "AI & Humanity – Co-Creating Our World Today", the Conclave features impactful discussions and the Studentpreneur and Inspirational Guru Awards, honoring those shaping a better, ethical, and sustainable future.</p>
+                <h3 class="pt-5">THEME FOR 2025</h3>
+                <p>At the SSVM Transforming India Conclave 2025, we focus on how AI and human creativity can shape a sustainable and innovative future. Our theme, "AI & Humanity – Co-Creating Our World Today," explores how technology and human potential can work together to solve challenges and create a better tomorrow. Join us as we dive into exciting conversations and ideas on how we can make a real impact with AI!</p>
+            </div>
+            <div class="md:w-5/12 w-full text-end flex flex-col gap-3">
+                <img src="images/placeholder.jpg" alt="" class="object-cover h-[100%] w-[100%] min-h-[250px]">
+            </div>
+        </div> -->
+
+    <!-- <div class="container mx-auto pt-[10rem] py-[5rem] px-4">
+        <div class="flex py-4 items-center">
+        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start line-1 anim-typewriter heading-3">MISSION</h2>
+        </div>
+        <p class="md:!text-4xl !text-2xl text-center pt-5 ">The SSVM Transforming India Conclave 2025 aims to ignite curiosity and inspire India's next generation of leaders. We're here to empower students with the knowledge, skills, and confidence to drive change. We believe in the power of innovative thinking and encourage fresh ideas to tackle everyday challenges. This Conclave is a collaborative platform where students, educators, and leaders unite to shape a brighter, more sustainable future for all.</p>
+    </div>
+       
+    </div>
+
+    <div class="container mx-auto py-[5rem] px-4">
+        <div class="flex py-4 items-center">
+        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start heading-4">speakers</h2>
+        </div>
+         <div class="overflow-hidden">
+            <div class="scroll-main">
+            <div class="single-section bg-red "> 
+                <div class="flex md:flex-row flex-col py-4 gap-8 items-center">
+                    <img src="images/speaker1.png" alt="" class="md:w-[450px] h-[450px] w-full">
+                    <img src="images/speaker1.png" alt="" class="md:w-[350px] h-[350px] w-full">
+                    <img src="images/speaker1.png" alt="" class="md:w-[250px] h-[250px] w-full">
+                    </div>
+            </div>
+         </div>
+        </div>
+    </div>
+        
+    </div>-->
  </section>
 
  <!-- about ssvm -->

@@ -3,39 +3,39 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
 
     // Create a timeline for the animations
+    // Check if the device is mobile
+    const isMobile = window.innerWidth <= 768;
+
+    // Create a timeline for the animations with different settings for mobile and desktop
     const textTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: '.scrolling-text-container',
-            start: 'top 100%',
-            end: 'bottom -230%',
+            start: isMobile ? 'top 80%' : 'top 100%',
+            end: isMobile ? 'bottom 100%' : 'bottom -230%',
             repeat: -1,
-            scrub: 1.2,
+            scrub: isMobile ? 0.8 : 1.2,
             markers: false
         }
     });
 
-    // Add animations to the timeline
+    // Add animations to the timeline with adjusted values for mobile
     textTimeline
         .to('.left-to-right', {
-            x: '150%',
+            x: isMobile ? '0%' : '150%',
             ease: 'power2.out',
-            // duration: 1
         })
         .to('.right-to-left', {
-            x: '-150%',
+            x: isMobile ? '0%' : '-150%',
             ease: 'power2.out',
-            // duration: 1
         }, '<');
 
     // Add a subtle fade-in effect when the text comes into view
     gsap.from('.scroll-text', {
-        // opacity: 0,
-        y: 20,
-        duration: 1,
-        // stagger: 0.2,
+        y: isMobile ? 10 : 20,
+        duration: isMobile ? 0.8 : 1,
         scrollTrigger: {
             trigger: '.scrolling-text-container',
-            start: 'top 80%',
+            start: isMobile ? 'top 90%' : 'top 80%',
             toggleActions: 'play none none reverse'
         }
     });

@@ -156,6 +156,34 @@ body {
     pointer-events: auto; /* Enable interaction with iframe */
 }
 
+.fixed-bg {
+
+    position: fixed;
+    
+    top: 0;
+    
+    left: 0;
+    
+    width: 100vw;
+    
+    height: 100vh;
+    
+    background: url('images/background1.png') no-repeat center center;
+    
+    background-size: cover;
+    
+    z-index: 0;
+    
+    }
+    
+    .bg1 {
+    
+    position: relative;
+    
+    z-index: 1;
+    
+    }
+
 @media (max-width: 768px) {
     .gallery {
         height: 60vh;

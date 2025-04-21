@@ -317,3 +317,8 @@ nav{
     transform: scale(0.8); /* Default smaller scale */
     transition: transform 0.3s ease;
 }
+
+.gradient-blue{
+  background: #F4C27D;
+background: linear-gradient(180deg,rgba(244, 194, 125, 1) 0%, rgba(222, 108, 110, 1) 50%, rgba(17, 16, 82, 1) 100%);
+}

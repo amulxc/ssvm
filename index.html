@@ -58,22 +58,22 @@
                 <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
                 <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto" id="mobileMenu">
                     <div class="flex items-center mb-8">
-                        <a class="mr-auto text-3xl font-bold leading-none" href="#" onclick="closeMobileMenu(); return false;">
+                        <a class="mr-auto text-3xl font-bold leading-none" href="#"">
                             <img src="images/logo.webp" alt="" class="h-20">
                         </a>
-                        <button class="navbar-close" id="closeMenu" onclick="closeMobileMenu()">
+                        <button class="navbar-close" 
                             <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
                     </div>
-                    <div>
+                    <div >
                         <ul>
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#home" onclick="closeMobileMenu(); return false;">Home</a></li>
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#inspirational-guru-award" onclick="closeMobileMenu(); return false;">Inspirational Guru Award</a></li>
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#studentpreneur-award" onclick="closeMobileMenu(); return false;">Studentpreneur Award</a></li>
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#previous-editions" onclick="closeMobileMenu(); return false;">Previous Editions</a></li>
-                            <li><a class="text-sm hover:text-gray-400 text-black" href="#contact" onclick="closeMobileMenu(); return false;">Contact</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black navbar-close" href="#home"">Home</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black navbar-close" href="#inspirational-guru-award"">Inspirational Guru Award</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black navbar-close" href="#studentpreneur-award"">Studentpreneur Award</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black navbar-close" href="#previous-editions"">Previous Editions</a></li>
+                            <li><a class="text-sm hover:text-gray-400 text-black navbar-close" href="#contact"">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -129,12 +129,13 @@
 
     <!-- type 2 -->
     <div class="wrapper !min-h-[100vh]">
-        <div class="panel gradient-green !min-h-[100vh]">
+        <div class="panel  !min-h-[100vh]">
             <img src="images/manimegalimam.webp" class="md:block hidden !w-[100%] !h-[100vh] box gradient-blue !object-cover" alt="">
-            <img src="images/mam-mob.jpg" class="md:hidden block !w-[100%] !object-cover !h-[full] box gradient-blue" alt="">
+            
+            <img src="images/Asset-2.png" class=" px-5 md:px-0 md:hidden block !w-[100%] !object-contain !h-[full] box gradient-blue" alt="">
           
         </div>
-    
+
         <!--  -->
 </div>
 </section>

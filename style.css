@@ -314,3 +314,83 @@ nav{
   background: #F4C27D;
 background: linear-gradient(180deg,rgba(244, 194, 125, 1) 0%, rgba(222, 108, 110, 1) 50%, rgba(17, 16, 82, 1) 100%);
 }
+
+.countdown{
+  border: 2px solid #FFB700;
+  border-radius: 10px;
+  padding: 30px 50px;
+  background-color: #D9D9D954;
+  li{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      font-weight: 400;
+      span{
+        border: 2px solid #EA3B31;
+        background: #fff;
+        color: #000;
+        padding: 10px;
+        border-radius: 10px;
+        width: 100px;
+        text-align: center;
+        font-size: 38px;
+        font-weight: 700;
+      }
+  }
+}
+.emoji{
+  display: none;
+}
+
+
+.marquee {
+  position: relative;
+  width: 120%;
+  max-width: 120%;
+  height: 100px;
+  padding: 10px;
+  overflow: hidden;
+  transform: rotate(-5deg);
+  margin-top:   100px;
+  margin-bottom: 100px;
+  background: linear-gradient(90deg,rgba(234, 57, 49, 1) 0%, rgba(250, 210, 8, 1) 100%);
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 30s linear infinite;
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  font-weight: bold;
+}
+
+@keyframes marquee {
+  from { transform: translateX(10%); }
+  to { transform: translateX(-50%); }
+}
+
+
+@media (max-width:767px) {
+  .countdown{
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    li{
+      gap: 0px;
+      span{
+        font-size: 25px;
+        width: 65px;
+      }
+    }
+  }
+  .marquee {
+    height: 60px;
+  }
+  .track {
+    font-size: 30px;
+  }
+}

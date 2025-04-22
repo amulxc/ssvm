@@ -12,7 +12,8 @@
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-
+    <script src="https://cdn.rawgit.com/hillion/countdownjs/0.0.5/countdown.min.js"></script>
+    
     
     <!-- <link rel="stylesheet" href="counter.css"> -->
     <link rel="stylesheet" href="style.css">
@@ -91,8 +92,21 @@
 <section id="home" class="bg1 items-center justify-center flex container-fluid">
 <div class="w-full">
 <div class="flex flex-col h-full w-full justify-center items-center md:min-h-[100vh] min-h-[80vh]">
-    <img src="images/logogif-c.gif" alt="" class="md:w-4/6 w-full">
-   
+    <img src="images/logogif-c.gif" alt="" class="md:w-4/6 w-full md:-mt-30">
+
+    <!-- coundown  -->
+        <div class="countdown md:-mt-70 md:mb-30" id="countdown">
+          <ul class="flex flex-row md:gap-10 gap-5 justify-between">
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+        <div id="content" class="emoji">
+            <p>Event Started on 01/05/2025</p>
+        </div>
+    <!-- coundown  end -->
 </div>
     <!-- anim 1 -->
     <!-- <div class="spacer"></div> -->
@@ -106,9 +120,19 @@
             <span class="md:text-9xl text-4xl md:text-start text-center"><h1>India Conclave <br/> 2025</h1></span>
         </div>
     </div>
-        <!-- <div class="scroll-text left-to-right">
-            <span>Join Us For An Unforgettable Experience</span>
-        </div> -->
+        <div class="marquee">
+            <div class="track">
+            <div class="content">
+                September 1, 2 & 3 & Location: SSVM World School, Coimbatore
+                &nbsp; &nbsp;&nbsp;
+                September 1, 2 & 3 & Location: SSVM World School, Coimbatore
+                &nbsp; &nbsp;&nbsp;
+                September 1, 2 & 3 & Location: SSVM World School, Coimbatore
+                &nbsp; &nbsp;&nbsp;
+                September 1, 2 & 3 & Location: SSVM World School, Coimbatore
+            </div>
+            </div>
+        </div>
     </div>
     
     <!-- <div class="spacer"></div> -->
@@ -242,6 +266,70 @@
     </div>
  </section>
 
+
+<section class="pink-wraper relative z-10">
+    <div class="container mx-auto py-[5rem] px-4">
+        <div class="flex py-4 items-center">
+        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start heading-4 text-black">entertainment & workshop </h2>
+        </div>
+        <div class="">
+            <div class="pt-25">
+                <div class="flex md:flex-row flex-col py-4 gap-8 items-center w-3/4 mx-auto">
+                    <img src="images/commingsoon.png" alt="" class="md:w-6/12 h-[250px] w-full">
+                    <img src="images/commingsoon.png" alt="" class="md:w-6/12 h-[250px] w-full">
+                    <img src="images/commingsoon.png" alt="" class="md:w-6/12 h-[250px] w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto py-40 px-4">
+        <div class="flex py-4 items-center">
+       
+        </div>
+        <div class="flex flex-col md:flex-row py-4  gap-10">
+            <div class="w-full md:w-1/2 space-y-5">
+                <h2 class=" text-black">Speakers </h2>
+                <P class="text-black text-xl leading-10 uppercase">The SSVM Transforming India Conclave 2025 is a premier gathering of visionary leaders, industry trailblazers, and social entrepreneurs. </P>
+                <a href="#" class="text-base text-black rounded-lg bg-linear-to-b from-[#FAD208] to-[#F2821E] px-5 py-2">View All Speakers</a>
+            </div>
+            <div class="w-full md:w-1/2 grid grid-cols-2 gap-0">
+                <div class="w-full bg-white relative z-10 p-4 grid-box ">
+                    <!-- <img src="images/speaker/image.png" alt="" class="w-full h-50 object-contain"> -->
+                    <img src="images/speaker/Clip-red.png" alt="" class="w-full clip-strike">
+                    <p class="text-black text-xl leading-10 uppercase stroke">COMING SOON</p>
+                    <h2 class="textsfor">NAME</h2>
+                    <p class="textsfor">destination</p>
+                </div>
+                <div class="w-full bg-white relative z-10 p-4 grid-box">
+                    <!-- <img src="images/speaker/image.png" alt="" class="w-full h-50 object-contain"> -->
+                    <img src="images/speaker/Clip-blue.png" alt="" class="w-full clip-strike">
+                    <p class="text-black text-xl leading-10 uppercase stroke">COMING SOON</p>
+                    <h2 class="textsfor">NAME</h2>
+                    <p class="textsfor">destination</p>
+                </div>
+                <div class="w-full bg-white relative z-10 p-4 grid-box">
+                    <!-- <img src="images/speaker/image.png" alt="" class="w-full h-50 object-contain"> -->
+                    <img src="images/speaker/Clip-orange.png" alt="" class="w-full clip-strike">
+                    <p class="text-black text-xl leading-10 uppercase stroke">COMING SOON</p>
+                    <h2 class="textsfor">NAME</h2>
+                    <p class="textsfor">destination</p>
+                </div>
+                <div class="w-full bg-white relative z-10 p-4 grid-box">
+                    <!-- <img src="images/speaker/image.png" alt="" class="w-full h-50 object-contain"> -->
+                    <img src="images/speaker/Group106-2.png" alt="" class="w-full clip-strike">
+                    <p class="text-black text-xl leading-10 uppercase stroke">COMING SOON</p>
+                    <h2 class="textsfor">NAME</h2>
+                    <p class="textsfor">destination</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- past highlights ssvm -->
 <section id="previous-editions" class="bg2">
     <div class="container mx-auto py-[2rem] px-4">
@@ -296,68 +384,35 @@
         </div>
         <p class="md:!text-4xl !text-2xl text-center pt-5 ">The SSVM Transforming India Conclave 2025 aims to ignite curiosity and inspire India's next generation of leaders. We're here to empower students with the knowledge, skills, and confidence to drive change. We believe in the power of innovative thinking and encourage fresh ideas to tackle everyday challenges. This Conclave is a collaborative platform where students, educators, and leaders unite to shape a brighter, more sustainable future for all.</p>
     </div>
-       
-    </div>
-
-    <div class="container mx-auto py-[5rem] px-4">
-        <div class="flex py-4 items-center">
-        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start heading-4">speakers</h2>
-        </div>
-         <div class="overflow-hidden">
-            <div class="scroll-main">
-            <div class="single-section bg-red "> 
-                <div class="flex md:flex-row flex-col py-4 gap-8 items-center">
-                    <img src="images/speaker1.png" alt="" class="md:w-[450px] h-[450px] w-full">
-                    <img src="images/speaker1.png" alt="" class="md:w-[350px] h-[350px] w-full">
-                    <img src="images/speaker1.png" alt="" class="md:w-[250px] h-[250px] w-full">
-                    </div>
-            </div>
-         </div>
-        </div>
-    </div>
-        
-    </div>-->
-
-
- <!-- about ssvm -->
-<!-- <section class="bg2">
-    <div class="container mx-auto py-[5rem] px-4">
-        <div class="flex flex-col py-4 items-center justify-center">
-     <h2 class="ssvm-h1 text-start heading-7"><span class="text-stroke">A</span>BOUT SSVM <span class="text-stroke">I</span>NSTITUTIONS</h2>
-        
-        <p class="text-start pt-5">SSVM Institutions is a distinguished network of educational institutions located in Coimbatore and Mettupalayam, Tamil Nadu, India. Since our establishment in 1998, we have been dedicated to shaping young minds through a holistic and innovative educational approach.</p>
-        <p class="text-start pt-5">Our institutions offer a wide range of learning experiences designed to empower students to succeed in an ever-evolving global landscape. At SSVM, we focus on nurturing individuals who are not only academically proficient but also well-prepared to tackle the challenges of the future.</p>
-        <img src="images/placeholder.jpg" alt="" class="pt-5">
-    </div>
-    </div>
-       
-    </div>
- </section> -->
-
+        -->
+   
 
  <!-- media ssvm -->
-<!-- <section class="bg2">
+<section class="bg2">
     <div class="container mx-auto py-[5rem] px-4">
-        <div class="flex py-4 items-center">
-        <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start heading-8">Media coverage</h2>
-        </div>
         
-<div class="grid md:grid-cols-5 grid-cols-1 grid-rows-auto gap-4">
-    <div ><img src="images/media/1.png" alt="" class="mt-12"></div>
-    <div ><img src="images/media/2.png" alt="" class="mt-6"></div>
-    <div ><img src="images/media/3.png" alt="" ></div>
-    <div ><img src="images/media/4.png" alt="" class="mt-16"></div>
-    <div ><img src="images/media/5.png" alt="" class="mt-8"></div>
-    <div ><img src="images/media/6.png" alt="" class="-mt-12"></div>
-    <div ><img src="images/media/7.png" alt=""></div>
-    <div ><img src="images/media/8.png" alt="" class="-mt-4 col-span-2"></div>
-    <div ><img src="images/media/9.png" alt="" class="col-start-9" ></div>
-</div>
+    
+    <div class="gallery2">
+        <div class="flex pt-20 items-center">
+            <img src="images/ele.png" alt="" class="md:h-30 h-20"><h2 class="ssvm-h1 text-start heading-8">Media coverage</h2>
+        </div>
+        <div class="cards2 pb-4 gap-20 flex md:flex-row newspaper gap-4">
+            <div class="w-75"><img src="images/media/1.png" alt="" class="mt-12"></div>
+            <div class="w-75"><img src="images/media/2.png" alt="" class="mt-6"></div>
+            <div class="w-75"><img src="images/media/3.png" alt="" ></div>
+            <div class="w-75"><img src="images/media/4.png" alt="" class="mt-16"></div>
+            <div class="w-75"><img src="images/media/5.png" alt="" class="mt-8"></div>
+            <div class="w-75"><img src="images/media/6.png" alt="" class="-mt-12"></div>
+            <div class="w-75"><img src="images/media/7.png" alt=""></div>
+            <div class="w-75"><img src="images/media/8.png" alt="" class="-mt-4 col-span-2"></div>
+            <div class="w-75"><img src="images/media/9.png" alt="" class="col-start-9" ></div>
+        </div>
+    </div>
     
     </div>
        
     </div>
- </section> -->
+ </section>
 
 
 
@@ -462,7 +517,7 @@
 
     <script src="script.js"></script>
     <script src="gsap.js"></script>
-    
+    <script src="counter.js"></script>
 
     
 </body>

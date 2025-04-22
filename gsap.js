@@ -144,6 +144,7 @@ ScrollTrigger.addEventListener("refresh", () => {
 
 
 // gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 const $container = $(".gallery");
 const $items = $(".cards");
 
@@ -204,6 +205,38 @@ gsap
 
 
 
+const $container2 = $(".gallery2");
+const $items2 = $(".cards2");
+
+const getMaxWidthHeight2 = function () {
+  maxWidth = $items2.width();
+  maxHeight = $items2.height();
+};
+getMaxWidthHeight2();
+
+ScrollTrigger.addEventListener("refreshInit", getMaxWidthHeight2);
+
+var tl = gsap.timeline().to($items2, {
+  x: function () {
+    return -maxWidth;
+  },
+  ease: "none"
+});
+
+gsap
+  .timeline({
+    ease: "linear",
+    scrollTrigger: {
+      trigger: $container2,
+      pin: true,
+      end: function () {
+        return "+=" + maxWidth;
+      },
+      scrub: 1,
+      invalidateOnRefresh: true
+    }
+  })
+  .add(tl);
 
 
 
@@ -443,6 +476,27 @@ gsap.timeline({
     ease: "none"
 }, 0);
 
+
+
+// Pink wrapper background animation
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".pink-wraper",
+        start: "top 0%",
+        end: "top 30%",
+        markers: false,
+        scrub: true,
+        toggleActions: "play none none reverse"
+        }
+    })
+    .fromTo(".pink-wraper", {
+        backgroundSize: "80%"
+    }, {
+        backgroundSize: "240%",
+        backgroundPosition: "center 0px",
+        duration: 1,
+        ease: "power1.inOut"
+    });
 });
 
 

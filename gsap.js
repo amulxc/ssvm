@@ -492,7 +492,7 @@ gsap.timeline({
     .fromTo(".pink-wraper", {
         backgroundSize: "80%"
     }, {
-        backgroundSize: "240%",
+        backgroundSize: "640%",
         backgroundPosition: "center 0px",
         duration: 1,
         ease: "power1.inOut"

@@ -205,38 +205,38 @@ gsap
 
 
 
-const $container2 = $(".gallery2");
-const $items2 = $(".cards2");
+// const $container2 = $(".gallery2");
+// const $items2 = $(".cards2");
 
-const getMaxWidthHeight2 = function () {
-  maxWidth = $items2.width();
-  maxHeight = $items2.height();
-};
-getMaxWidthHeight2();
+// const getMaxWidthHeight2 = function () {
+//   maxWidth = $items2.width();
+//   maxHeight = $items2.height();
+// };
+// getMaxWidthHeight2();
 
-ScrollTrigger.addEventListener("refreshInit", getMaxWidthHeight2);
+// ScrollTrigger.addEventListener("refreshInit", getMaxWidthHeight2);
 
-var tl = gsap.timeline().to($items2, {
-  x: function () {
-    return -maxWidth;
-  },
-  ease: "none"
-});
+// var tl = gsap.timeline().to($items2, {
+//   x: function () {
+//     return -maxWidth;
+//   },
+//   ease: "none"
+// });
 
-gsap
-  .timeline({
-    ease: "linear",
-    scrollTrigger: {
-      trigger: $container2,
-      pin: true,
-      end: function () {
-        return "+=" + maxWidth;
-      },
-      scrub: 1,
-      invalidateOnRefresh: true
-    }
-  })
-  .add(tl);
+// gsap
+//   .timeline({
+//     ease: "linear",
+//     scrollTrigger: {
+//       trigger: $container2,
+//       pin: true,
+//       end: function () {
+//         return "+=" + maxWidth;
+//       },
+//       scrub: 1,
+//       invalidateOnRefresh: true
+//     }
+//   })
+//   .add(tl);
 
 
 

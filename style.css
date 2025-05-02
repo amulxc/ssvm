@@ -394,3 +394,7 @@ background: linear-gradient(180deg,rgba(244, 194, 125, 1) 0%, rgba(222, 108, 110
     font-size: 30px;
   }
 }
+
+/* .text-stroke {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.247);
+} */

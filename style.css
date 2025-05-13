@@ -181,6 +181,18 @@ span.text-stroke-black{
     z-index: 2;
     position: relative;
 }
+.bg3{
+ background-image: url(images/aibg.png);
+   background-size: cover;
+   background-position: center;
+   color: white;
+   text-align: center;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 2;
+    position: relative;
+}
 
 
 .text-bg {
